@@ -1,0 +1,11 @@
+*What is Depression?
+Depression is more than just feeling sad or pessimistic. Depression drains your optimism and energy.
+It can seem like there's no way out. But no matter how bad you feel, there's always hope.
+
+*What is BDI?
+The Beck Depression Inventory (BDI) is a 21 questions, self-report rating inventory that measures
+characteristic attitudes and symptoms of depression.
+
+*What is BDI Score?
+It is the score obtained by solving the BDI(Beck Depression Inventory) questionnaire.
+0-
