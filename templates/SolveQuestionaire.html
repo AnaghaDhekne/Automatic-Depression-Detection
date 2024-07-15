@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+{% import "bootstrap/wtf.html" as wtf %}
+<html lang="en">
+    <head>
+        <title>De Depressie </title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900|Playfair+Display:400,700,900 " rel="stylesheet">
+    <link href={{url_for('static',filename='fonts/icomoon/style.css')}} rel="stylesheet">
+    <link href={{url_for('static',filename='css/bootstrap.min.css')}} rel="stylesheet">
+    <link href="{{url_for('.static', filename='signin.css')}}" rel="stylesheet">
+    <link href={{url_for('static',filename='css/jquery-ui.css')}} rel="stylesheet">
+    <link href={{url_for('static',filename='css/owl.carousel.min.css')}} rel="stylesheet">
+    <link href={{url_for('static',filename='css/owl.theme.default.min.css')}} rel="stylesheet">
+    <link href={{url_for('static',filename='css/jquery.fancybox.min.css')}} rel="stylesheet">
+    <link href={{url_for('static',filename='css/bootstrap-datepicker.css')}} rel="stylesheet">
+    <link href={{url_for('static',filename='fonts/flaticon/font/flaticon.css')}} rel="stylesheet">
+    <link href={{url_for('static',filename='css/aos.css')}} rel="stylesheet">
+    <link href={{url_for('static',filename='css/style.css')}} rel="stylesheet">
+
+    <style>
+	    .img {
+		border-radius: 50%;
+	    }
+	    .popup {
+  position: absolute;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 300px;
+  height: auto;
+  background-color: #555;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 10px 0;
+  position: absolute ;
+  z-index: 1;
+  bottom: 50%;
+  left: 280%;
+  margin-left: 10px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<body data-offset="300" data-spy="scroll" data-target=".site-navbar-target">
+  <div class="site-wrap">
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-6 col-xl-2">
+            <h1 class="mb-0 site-logo m-0 p-0"><a class="mb-0" href="/">De Depressie</a></h1>
+          </div>
+
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li><a class="nav-link" href="#materials-section">Lets Discuss</a></li>
+		        <li><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3"><a class="site-menu-toggle js-menu-toggle text-black float-right" href="#"><span class="icon-menu h3"></span></a></div>
+        </div>
+      </div>
+    </header>
+    <div class="site-blocks-cover overlay" data-aos="fade" id="home-section" style="background-image: url(static/images/background.jpg);">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-6 mt-lg-5 text-center">
+		  <img class="img" height="200px" src="static/images/logo.png" width="200px">
+            <h1>We are here to HELP</h1>
+          </div>
+        </div>
+      </div>
+      <a class="smoothscroll arrow-down" href="#howitworks-section"><span class="icon-arrow_downward"></span></a>
+    </div>
+    <div class="py-5 bg-light site-section how-it-works" id="howitworks-section">
+      <div class="container">
+        <div class="row mb-5 justify-content-center">
+          <div class="col-md-7 text-center">
+            <h2 class="section-title mb-3">Disclaimer</h2>
+            <p>De-Depressie has been developed to analyze depression amidst the organization's employees and the developers commit to protecting the privacy of the employees. The subsequent questionnaire is designed using Beck Depression Inventory-II, which is a broadly used psychometric test for estimating the severity of depression. This page apprises the employees that there is no storage or revelation of Personal Information in any kind after answering the questionnaire.
+By using this site, you consent to the collection and use of information by this disclaimer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <section class="site-section  border-bottom" id="materials-section">
+	  <div class="container" >
+        <div class="row mb-5 align-items-center">
+          <div class="col-md-7 text-left">
+            <h2 class="section-title mb-3">Lets Discuss</h2>
+          </div>
+          <div class="container">
+            <form action="/solve_questionaire" method="post">
+                    {{ form.hidden_tag() }}
+                    {{ form.hidden_tag() }}
+
+                    {{ form.question1.label }}
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="Sadness is an emotional pain which specifies the scale of emotional states correlated with the feelings of disadvantage, loss, discouragement, pain, helplessness, frustration. Sadness is an emotion that everyone encounters, often after stressful or upsetting life situations.">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question1"> </span>
+                    {{ wtf.form_field(form.question1) }}
+                    <br>
+
+                    {{ form.question2.label }}
+
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="Pessimism an urge towards negativity and the tendency to consider the worst in most circumstances. A pessimist has a depressed mental attitude with stress, depression, sleep disorders, unstable blood pressure, heart disease, and lifestyle choices that can be degrading one's overall health.">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question2"> </span>
+                    {{ wtf.form_field(form.question2) }}
+                    <br>
+
+                    {{ form.question3.label }}
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="Past Failure is the condition of not meeting a beneficial or expected goal somewhere in the past. Past failure is when one has let others down, and, more significantly, oneself.">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question3">  </span>
+                    {{ wtf.form_field(form.question3) }}
+                    <br>
+
+                    {{ form.question4.label }}
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="One experiences the loss of pleasure when it becomes difficult to extract satisfaction from everything that once obtained excitement, like music, food, and communication. Loss of pleasure reduces one's motivation, liking and wanting.">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question4"> </span>
+                    {{ wtf.form_field(form.question4) }}
+                    <br>
+
+                    {{ form.question5.label }}
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="Guilty Feelings emerge within a person typically after doing something wrong, purposely or unintentionally. A person starts feeling guilty when he/she experiences a sense of regret that links to steps taken.">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question5">
+                        </span>
+                    {{ wtf.form_field(form.question5) }}
+                    <br>
+
+                    {{ form.question6.label }}
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="Self- Punishment is unreasonable anger with oneself, a manner of treating oneself with shame each time one feels discomfort or each time one feels neglected or discarded by somebody else.It is a mentally unstable state where people experience all kinds of negative emotions.">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question6"> </span>
+                    {{ wtf.form_field(form.question6) }}
+                    <br>
+
+                    {{ form.question7.label }}
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="People who hate themselves and have low self-esteem experience self-hatred. People with self-hatred continually find faults with themselves and put themselves down with no real knowledge that there is anything wrong.">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question7"></span>
+                    {{ wtf.form_field(form.question7) }}
+                    <br>
+
+                    {{ form.question8.label }}
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="Self-Criticalness is a negative character trait in which they tend to be depressed. A self-criticized person blames himself/herself for each and every negative circumstance, avoids taking risks,  and is never satisfied.">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question8"> </span>
+                    {{ wtf.form_field(form.question8) }}
+                    <br>
+
+                    {{ form.question9.label }}
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="Suicidal thoughts signify that one is feeling worried or anxious beyond one's limit. Such thoughts are often seen when it seems as though one's sorrow will never end. ">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question9"></span>
+                    {{ wtf.form_field(form.question9) }}
+                    <br>
+
+                    {{ form.question10.label }}
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="Sadness is an emotional pain which specifies the scale of emotional states correlated with the feelings of disadvantage, loss, discouragement, pain, helplessness, frustration. Sadness is an emotion that everyone encounters, often after stressful or upsetting life situations.">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question10"> </span>
+                    {{ wtf.form_field(form.question10) }}
+                    <br>
+
+                    {{ form.question11.label }}
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="Sadness is an emotional pain which specifies the scale of emotional states correlated with the feelings of disadvantage, loss, discouragement, pain, helplessness, frustration. Sadness is an emotion that everyone encounters, often after stressful or upsetting life situations.">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question11"> </span>
+                    {{ wtf.form_field(form.question11) }}
+                    <br>
+
+                    {{ form.question12.label }}
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="Sadness is an emotional pain which specifies the scale of emotional states correlated with the feelings of disadvantage, loss, discouragement, pain, helplessness, frustration. Sadness is an emotion that everyone encounters, often after stressful or upsetting life situations.">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question12"> </span>
+                    {{ wtf.form_field(form.question12) }}
+                    <br>
+
+                    {{ form.question13.label }}
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="Sadness is an emotional pain which specifies the scale of emotional states correlated with the feelings of disadvantage, loss, discouragement, pain, helplessness, frustration. Sadness is an emotion that everyone encounters, often after stressful or upsetting life situations.">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question13"> </span>
+                    {{ wtf.form_field(form.question13) }}
+                    <br>
+
+                    {{ form.question14.label }}
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="Sadness is an emotional pain which specifies the scale of emotional states correlated with the feelings of disadvantage, loss, discouragement, pain, helplessness, frustration. Sadness is an emotion that everyone encounters, often after stressful or upsetting life situations.">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question14"> </span>
+                    {{ wtf.form_field(form.question14) }}
+                    <br>
+
+                    {{ form.question15.label }}
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="Sadness is an emotional pain which specifies the scale of emotional states correlated with the feelings of disadvantage, loss, discouragement, pain, helplessness, frustration. Sadness is an emotion that everyone encounters, often after stressful or upsetting life situations.">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question15"> </span>
+                    {{ wtf.form_field(form.question15) }}
+                    <br>
+
+                    {{ form.question16.label }}
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="Sadness is an emotional pain which specifies the scale of emotional states correlated with the feelings of disadvantage, loss, discouragement, pain, helplessness, frustration. Sadness is an emotion that everyone encounters, often after stressful or upsetting life situations.">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question16"></span>
+                    {{ wtf.form_field(form.question16) }}
+                    <br>
+
+                    {{ form.question17.label }}
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="Sadness is an emotional pain which specifies the scale of emotional states correlated with the feelings of disadvantage, loss, discouragement, pain, helplessness, frustration. Sadness is an emotion that everyone encounters, often after stressful or upsetting life situations.">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question17"></span>
+                    {{ wtf.form_field(form.question17) }}
+                    <br>
+
+                    {{ form.question18.label }}
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="Sadness is an emotional pain which specifies the scale of emotional states correlated with the feelings of disadvantage, loss, discouragement, pain, helplessness, frustration. Sadness is an emotion that everyone encounters, often after stressful or upsetting life situations.">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question18"></span>
+                    {{ wtf.form_field(form.question18) }}
+                    <br>
+
+                    {{ form.question19.label }}
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="Sadness is an emotional pain which specifies the scale of emotional states correlated with the feelings of disadvantage, loss, discouragement, pain, helplessness, frustration. Sadness is an emotion that everyone encounters, often after stressful or upsetting life situations. ">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question19"></span>
+                    {{ wtf.form_field(form.question19) }}
+                    <br>
+
+                    {{ form.question20.label }}
+                        <a href="#" data-toggle="tooltip" data-placement="right" title="Sadness is an emotional pain which specifies the scale of emotional states correlated with the feelings of disadvantage, loss, discouragement, pain, helplessness, frustration. Sadness is an emotion that everyone encounters, often after stressful or upsetting life situations. ">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question20"></span>
+                    {{ wtf.form_field(form.question20) }}
+                    <br>
+
+                    {{ form.question21.label }}
+                    <a href="#" data-toggle="tooltip" data-placement="right" title="Sadness is an emotional pain which specifies the scale of emotional states correlated with the feelings of disadvantage, loss, discouragement, pain, helplessness, frustration. Sadness is an emotion that everyone encounters, often after stressful or upsetting life situations.">
+                            <img src="static/images/information.png" width="11" height="11"></a>
+                        <span class="popuptext" id="question21"> </span>
+                    {{ wtf.form_field(form.question21) }}
+                    <br>
+
+                    <br>
+                    <input type="submit" >
+            </form>
+              <div id="myModal" class="modal">
+          </div> <!-- /container -->
+        </div>
+        </div>
+      </div>
+    </section>
+    </div>
+      <footer style="background-color: #3C4248;height:80px" >
+          <div style="height:30px"></div>
+          <p align="center">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a href="http://www.onego.in" target="_blank" >OneGo</a></p>
+      </footer>
+        </div>
+        <script src="static/js/jquery-3.3.1.min.js"></script>
+        <script src="static/js/jquery-migrate-3.0.1.min.js"></script>
+        <script src="static/js/jquery-ui.js"></script>
+        <script src="static/js/popper.min.js"></script>
+        <script src="static/js/bootstrap.min.js"></script>
+        <script src="static/js/owl.carousel.min.js"></script>
+        <script src="static/js/jquery.stellar.min.js"></script>
+        <script src="static/js/jquery.countdown.min.js"></script>
+        <script src="static/js/bootstrap-datepicker.min.js"></script>
+        <script src="static/js/jquery.easing.1.3.js"></script>
+        <script src="static/js/aos.js"></script>
+        <script src="static/js/jquery.fancybox.min.js"></script>
+        <script src="static/js/jquery.sticky.js"></script>
+        <script src="static/js/main.js"></script>
+    </body>
+</html>

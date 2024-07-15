@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% import "bootstrap/wtf.html" as wtf %}
+<html lang="en">
+  <head>
+    <title>De Depressie </title>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900|Playfair+Display:400,700,900 " rel="stylesheet">
+    <link rel="stylesheet" href={{url_for('static',filename='fonts/icomoon/style.css')}}>
+    <link rel="stylesheet" href={{url_for('static',filename='css/bootstrap.min.css')}}>
+    <link rel="stylesheet" href="{{url_for('.static', filename='signin.css')}}">
+    <link rel="stylesheet" href={{url_for('static',filename='css/jquery-ui.css')}}>
+    <link rel="stylesheet" href={{url_for('static',filename='css/owl.carousel.min.css')}}>
+    <link rel="stylesheet" href={{url_for('static',filename='css/owl.theme.default.min.css')}}>
+    <link rel="stylesheet" href={{url_for('static',filename='css/jquery.fancybox.min.css')}}>
+    <link rel="stylesheet" href={{url_for('static',filename='css/bootstrap-datepicker.css')}}>
+    <link rel="stylesheet" href={{url_for('static',filename='fonts/flaticon/font/flaticon.css')}}>
+    <link rel="stylesheet" href={{url_for('static',filename='css/aos.css')}}>
+    <link rel="stylesheet" href={{url_for('static',filename='css/style.css')}}>
+
+    <link rel="stylesheet" href={{url_for('static',filename='css/font-awesome1.min.css')}}/>
+    <link href="https://fonts.googleapis.com/css?family=Muli:400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
+
+
+  </head>
+
+<body>
+
+<div id="notfound">
+		<div class="notfound text-center">
+            <img src="static/images/408.png" height="600px" width="800px" align="center">
+            <form method="post" action="/pagenotfunderror">
+			<button class="btn btn-primary ">Back To Homepage</button>
+            </form>
+		</div>
+	</div>
+</body>
+</html>

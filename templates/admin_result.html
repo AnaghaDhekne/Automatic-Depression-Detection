@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+{% import "bootstrap/wtf.html" as wtf %}
+<html lang="en">
+  <head>
+    <title>De Depressie </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900|Playfair+Display:400,700,900 " rel="stylesheet">
+    <link rel="stylesheet" href={{url_for('static',filename='fonts/icomoon/style.css')}}>
+    <link rel="stylesheet" href={{url_for('static',filename='css/bootstrap.min.css')}}>
+    <link rel="stylesheet" href="{{url_for('.static', filename='signin.css')}}">
+    <link rel="stylesheet" href={{url_for('static',filename='css/jquery-ui.css')}}>
+    <link rel="stylesheet" href={{url_for('static',filename='css/owl.carousel.min.css')}}>
+    <link rel="stylesheet" href={{url_for('static',filename='css/owl.theme.default.min.css')}}>
+    <link rel="stylesheet" href={{url_for('static',filename='css/jquery.fancybox.min.css')}}>
+    <link rel="stylesheet" href={{url_for('static',filename='css/bootstrap-datepicker.css')}}>
+    <link rel="stylesheet" href={{url_for('static',filename='fonts/flaticon/font/flaticon.css')}}>
+    <link rel="stylesheet" href={{url_for('static',filename='css/aos.css')}}>
+    <link rel="stylesheet" href={{url_for('static',filename='css/style.css')}}>
+
+<style>
+	.img {
+		border-radius: 50%;
+	}
+	</style>
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+  <div class="site-wrap">
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-6 col-xl-2">
+            <h1 class="mb-0 site-logo m-0 p-0"><a href="/" class="mb-0">De Depressie</a></h1>
+          </div>
+
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li><a href="#chart-section" class="nav-link">Charts</a></li>
+                <li><a href="{{ url_for('logout') }}" class="nav-link">Logout</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="site-blocks-cover overlay" style="background-image: url(static/images/background.jpg);" data-aos="fade" id="home-section">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-6 mt-lg-5 text-center">
+		  <img class="img" src="static/images/logo.png" width="200px" height="200px">
+            <h1>We are here to HELP</h1>
+          </div>
+            <div class="col-md-6 mt-lg-5 text-center" style="background-image: url(static/images/background.jpg);" data-aos="fade">
+            <div class="container">
+                <div class="row mb-2 align-items-center">
+                  <div class="col-md-6 text-center">
+                    <h2 class="section-title mt-2 text-middle">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspUser&nbspResult</h2>
+                  </div>
+                  <div class="container">
+                    <form class="form-signin" method="POST" action="/user_result">
+                      <br>
+                      {{ eform.hidden_tag() }}
+                      {{ wtf.form_field(eform.email_id, placeholder='Email') }}
+                      <br>
+                      <button class="btn btn-lg btn-primary btn-block" type="submit" >Submit</button>
+                      <br>
+                    </form>
+                  </div>
+                    <div align="center">
+                      <!--form method="POST" action="/forgetpassword"><button style="border:0; background-color:transparent; color:#F69314;" type="submit">Forget Password?</button></form-->
+
+                         {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                    <script>
+                                        var messages = {{ messages | safe }};
+                                        for (var i=0; i<messages.length; i++) {
+                                        alert(messages[i]);
+                                        }
+                                    </script>
+                                {% endif %}
+                         {% endwith %}
+                    </div>
+                  </div> <!-- /container -->
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="site-section" id="chart-section">
+    <div class="container">
+        <div class="row mb-5 align-items-center">
+          <div class="col-md-7 text-left">
+            <h2 class="section-title mb-3">Result Analysis</h2>
+          </div>
+          <div class="col-md-5 text-left text-md-right">
+            <div class="custom-nav1">
+             <a href="#" class="custom-prev1"><img src="static/images/leftarrow.png" style="width:40px"></a><span class="mx-3"/><a href="#" class="custom-next1"><img src="static/images/rightarrow.png" style="width:40px"></a>
+            </div>
+          </div>
+        </div>
+
+    <div class="owl-carousel nonloop-block-13 mb-5">
+
+          <div class="property">
+            <a href="/emotion_bdi">
+              <img src="static/images/pic4.png" alt="Image" height="200px">
+            </a>
+            <div class="prop-details p-3">
+              <div><strong class="price"><p style="text-align:center;">Emotions-BDI</p></strong></div>
+            </div>
+          </div>
+
+          <div class="property">
+            <a href="/age">
+              <img src="static/images/1.jpg" alt="Image" height="200px">
+            </a>
+            <div class="prop-details p-3">
+              <div><strong class="price"><p style="text-align:center;">Age</p></strong></div>
+            </div>
+          </div>
+
+          <div class="property">
+            <a href="/gender">
+              <img src="static/images/pic3.png" alt="Image" height="200px">
+            </a>
+            <div class="prop-details p-3">
+              <div><strong class="price"><p style="text-align:center;">Gender</p></strong></div>
+            </div>
+          </div>
+
+          <div class="property">
+            <a href="/level">
+              <img src="static/images/pic6.png" alt="Image" height="200px">
+            </a>
+            <div class="prop-details p-3">
+              <div><strong class="price"><p style="text-align:center;">Level-wise Analysis</p></strong></div>
+            </div>
+          </div>
+    </div>
+    </div>
+    </section>
+    <footer style="background-color: #3C4248;height:80px" >
+      <div style="height:30px"></div>
+      <p align="center">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a href="http://www.onego.in" target="_blank" >OneGo</a></p>
+    </footer>
+  </div>
+
+  <script src="static/js/jquery-3.3.1.min.js"></script>
+  <script src="static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="static/js/jquery-ui.js"></script>
+  <script src="static/js/popper.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/owl.carousel.min.js"></script>
+  <script src="static/js/jquery.stellar.min.js"></script>
+  <script src="static/js/jquery.countdown.min.js"></script>
+  <script src="static/js/bootstrap-datepicker.min.js"></script>
+  <script src="static/js/jquery.easing.1.3.js"></script>
+  <script src="static/js/aos.js"></script>
+  <script src="static/js/jquery.fancybox.min.js"></script>
+  <script src="static/js/jquery.sticky.js"></script>
+  <script src="static/js/main.js"></script>
+  </body>
+</html>
