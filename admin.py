@@ -18,7 +18,7 @@ from numpy import std
 from scipy.stats import pearsonr
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'Thisissupposedtobesecret!'
+app.config['SECRET_KEY'] = '#########################'
 app.config['IS_LOGIN'] = False
 bootstrap = Bootstrap(app)
 mail_settings = {
@@ -26,19 +26,19 @@ mail_settings = {
     "MAIL_PORT": 465,
     "MAIL_USE_TLS": False,
     "MAIL_USE_SSL": True,
-    "MAIL_USERNAME": 'depressiede@gmail.com',
-    "MAIL_PASSWORD": 'RAAS@123'
+    "MAIL_USERNAME": '##############',
+    "MAIL_PASSWORD": '###########'
 }
-app.config['MAIL_DEFAULT_SENDER'] = 'depressiede@gmail.com'
+app.config['MAIL_DEFAULT_SENDER'] = '####################'
 app.config['SECURITY_PASSWORD_SALT'] = 'my_precious_two'
 app.config.update(mail_settings)
 mail = Mail(app)
-s = URLSafeTimedSerializer('Thisissupposedtobesecret!')
+s = URLSafeTimedSerializer('#########################')
 CONNECTION = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="root",
-    database="project",
+    host="#############",
+    user="####",
+    password="####",
+    database="#######",
     auth_plugin='mysql_native_password'
 )
 app.config['CONNECTION'] = CONNECTION
