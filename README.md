@@ -4,6 +4,11 @@ This project aims to detect depression by analyzing emotional expressions in rea
 
 ---
 
+## Publication
+https://ieeexplore.ieee.org/document/9210301
+
+---
+
 ## Features
 - **ETL Pipeline for Real-Time Video Processing**  
   Developed using Python for workflow orchestration, enabling efficient and scalable processing of video data with a 65% accuracy rate in emotion detection.
@@ -42,8 +47,7 @@ This project aims to detect depression by analyzing emotional expressions in rea
 ### Steps
 1. Clone the repository:
  ```bash
- git clone https://github.com/yourusername/depression-detection-visual-inputs.git
- cd depression-detection-visual-inputs
+ git clone https://github.com/AnaghaDhekne/Automatic-Depression-Detection.git
 ```
 2. Install dependencies:
 ```bash
