@@ -1,6 +1,6 @@
 # Automatic Depression Detection Through Visual Inputs
 
-This project aims to detect depression by analyzing emotional expressions in real-time video data using advanced machine learning techniques and a robust ETL pipeline. The system is designed to preprocess video inputs, extract relevant features, and detect emotions with high accuracy, making it a valuable tool for mental health monitoring.
+This project aims to detect depression by analyzing emotional expressions in real-time video data using advanced machine learning techniques and a robust ETL pipeline. The system is designed to preprocess video inputs, extract relevant features, and detect emotions with co-relation with Beck Depression Inventory II score providing high accuracy, making it a valuable tool for mental health monitoring.
 
 ---
 
@@ -61,19 +61,19 @@ python app.py
 
 ---
 
-### Usage
+## Usage
 Upload a video file through the web application's interface.
 The system will preprocess the video, extract features, and run the emotion detection model.
 Results are displayed in real-time, highlighting detected emotions frame by frame.
 
 ---
 
-### Results
+## Results
 Emotion Detection Accuracy: 65% on video data
 Image Preprocessing Accuracy: 95% with noise and error reduction
 Pipeline Optimization: 40% faster feature extraction and processing
 
 ---
 
-### Contributing
+## Contributing
 Contributions are welcome! Please open an issue to discuss your ideas or submit a pull request.
